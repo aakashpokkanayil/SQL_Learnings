@@ -1,0 +1,48 @@
+-- create table supplier
+-- (
+-- sid char(5) PRIMARY key,
+-- sname varchar(20) not null,
+-- sadd VARCHAR(30) not null,
+-- city VARCHAR(20) DEFAULT 'delhi',
+-- sphone VARCHAR(15) UNIQUE,
+-- email VARCHAR(25)
+
+-- ); 
+
+-- CREATE table product
+-- (
+--     pid char(5) PRIMARY key,
+--     pdesc VARCHAR(100) not null,
+--     price int CHECK(price>0),
+--     category char(2) check(category in ('IT','HA','HC')),
+--     sid char(5) FOREIGN KEY REFERENCES supplier(sid)
+-- );
+
+-- CREATE TABLE Cust
+-- (
+--   cid char(5) PRIMARY KEY,
+--   cname VARCHAR(20) NOT NULL,
+--   address VARCHAR(30)  NOT NULL,
+--   city VARCHAR(20) NOT NULL,
+--   phone VARCHAR(15) NOT NULL,
+--   email VARCHAR(20) NOT NULL,
+--   dob DATE CHECK (dob< '1-JAN-2000')
+-- );
+
+-- CREATE TABLE stock
+-- (
+--     pid char(5) FOREIGN KEY REFERENCES product(pid),
+--     sqty int CHECK(sqty >= 0),
+--     rol int CHECK(rol >0),
+--     moq int CHECK(moq >= 5)
+
+-- );
+
+-- create TABLE orders
+-- (
+--     oid CHAR(5) PRIMARY key,
+--     odate date,
+--     pid CHAR(5) FOREIGN key REFERENCES product(pid),
+--     cid CHAR(5) FOREIGN key REFERENCES Cust(cid),
+--     oqty int CHECK(oqty >=1)
+-- )
