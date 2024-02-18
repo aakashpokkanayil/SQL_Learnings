@@ -30,6 +30,15 @@
 
 -- IN THE INVENTORY STRUCTURE DISPLAY :
 
--- 1) PID, PDESC, CATEGORY, SNAME, SCITY
+-- 1) PID, PDESC, CATEGORY, SNAME,  
+
+    select PID,PDESC,category,sname,SNAME
+    from product
+    inner join supplier on product.sid=supplier.sid
 
 -- 2 ) DISPLAY OID , ODATE , CNAME, CADDRESS, CPHONE, PDESC, PRICE,OQTY, AMT
+
+    select OID , ODATE , CNAME, ADDRESS, PHONE, PDESC, PRICE,OQTY, price
+    from orders
+    INNER JOIN Cust on Cust.cid=orders.cid
+    INNER JOIN product on orders.pid=product.pid

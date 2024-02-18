@@ -163,3 +163,8 @@ where len(name)=(select max(len(name)) from emp)
 
 -- 4) IN THE INVENTORY STRUCTURE GENERATE A VIEW BILL. IT SHOULD DISPLAY
 -- OID,ODATE,CNAME,ADDRESS,PHONE,PDESC, PRICE, OQTY, AMOUNT
+
+select OID,ODATE,CNAME,ADDRESS,PHONE,PDESC, PRICE, OQTY, (OQTY*PRICE) as 'AMOUNT'
+from orders
+INNER join Cust on cust.cid=orders.cid
+INNER JOIN product on product.pid=orders.pid
